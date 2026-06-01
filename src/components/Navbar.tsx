@@ -38,7 +38,7 @@ export default function Navbar() {
       {/* Logo at Top Left */}
       <div 
         ref={logoRef} 
-        className="fixed left-6 sm:left-12 top-10 flex items-center gap-3 pointer-events-auto z-[1000]"
+        className="absolute lg:fixed left-6 sm:left-12 lg:left-12 top-10 flex items-center gap-3 pointer-events-auto z-[1000]"
       >
         <img src="/lumer_labs_logo_svg.svg" alt="LumerLabs Logo" className="w-10 h-10 lg:w-12 lg:h-12" />
         <span className="text-white font-semibold text-xl lg:text-2xl tracking-tight">LumerLabs</span>
@@ -47,7 +47,7 @@ export default function Navbar() {
       {/* Mobile Menu Button - aligned to the right, matching logo height */}
       <button 
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="w-12 h-12 flex items-center justify-center bg-white/5 backdrop-blur-lg border border-white/10 rounded-full shadow-lg text-slate-300 hover:text-white transition-all active:scale-95 cursor-pointer pointer-events-auto z-[1000] lg:hidden fixed right-6 top-10"
+        className="w-12 h-12 flex items-center justify-center bg-white/5 backdrop-blur-lg border border-white/10 rounded-full shadow-lg text-slate-300 hover:text-white transition-all active:scale-95 cursor-pointer pointer-events-auto z-[1000] lg:hidden absolute right-6 top-10"
         aria-label="Toggle Menu"
       >
         {isMobileMenuOpen ? (

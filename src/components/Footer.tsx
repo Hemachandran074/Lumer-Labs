@@ -7,10 +7,10 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
         <div className="flex flex-col gap-6 max-w-sm">
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <img src="/lumer_labs_logo_svg.svg" alt="LumerLabs Logo" className="w-10 h-10" />
             <span className="text-white font-semibold text-2xl tracking-tight">LumerLabs</span>
-          </div>
+          </div> */}
           <p className="text-slate-400 text-sm leading-relaxed">
             Pioneering the intersection of artificial intelligence and strategic creativity to build the future of digital experiences.
           </p>

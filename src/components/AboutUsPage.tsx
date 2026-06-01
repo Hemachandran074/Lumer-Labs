@@ -64,14 +64,14 @@ export default function AboutUsPage() {
       <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center">
         <h1
           ref={titleRef}
-          className="text-white font-bold text-5xl sm:text-6xl md:text-7xl tracking-tight mb-12"
+          className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-8 sm:mb-12"
         >
           About Us
         </h1>
 
         <p
           ref={introRef}
-          className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mb-20"
+          className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mb-12 sm:mb-20"
         >
           <span className="text-white font-semibold">LumerLabs</span> is a collective of designers,
           engineers, and strategists who bridge the gap between artificial intelligence and human
@@ -81,22 +81,22 @@ export default function AboutUsPage() {
         </p>
 
         {/* Value cards */}
-        <div ref={cardsRef} className="w-full flex flex-col gap-10">
+        <div ref={cardsRef} className="w-full flex flex-col gap-8 sm:gap-10">
           {values.map((v) => (
             <div
               key={v.number}
-              className={`value-card flex flex-col sm:flex-row items-start gap-6 ${v.align === 'right' ? 'sm:flex-row-reverse sm:ml-auto' : ''
+              className={`value-card flex flex-col sm:flex-row items-start gap-4 sm:gap-6 ${v.align === 'right' ? 'sm:flex-row-reverse sm:ml-auto' : ''
                 } max-w-lg ${v.align === 'right' ? 'self-end' : 'self-start'}`}
             >
               <span
-                className="text-[4rem] sm:text-[5rem] font-bold leading-none tracking-tighter select-none"
+                className="text-[3rem] sm:text-[4rem] lg:text-[5rem] font-bold leading-none tracking-tighter select-none"
                 style={{ color: 'transparent', WebkitTextStroke: '1px rgba(255, 255, 255, 0.5)' }}
               >
                 {v.number}
               </span>
-              <div className={`flex flex-col gap-2 ${v.align === 'right' ? 'items-end text-right' : 'items-start text-left'}`}>
-                <h3 className="text-white font-semibold text-xl sm:text-2xl">{v.title}</h3>
-                <p className="text-slate-400 text-lg sm:text-base leading-relaxed max-w-sm">
+              <div className={`flex flex-col gap-1.5 sm:gap-2 ${v.align === 'right' ? 'items-end text-right' : 'items-start text-left'}`}>
+                <h3 className="text-white font-semibold text-lg sm:text-xl lg:text-2xl">{v.title}</h3>
+                <p className="text-slate-400 text-sm sm:text-sm lg:text-base leading-relaxed max-w-sm">
                   {v.description}
                 </p>
               </div>

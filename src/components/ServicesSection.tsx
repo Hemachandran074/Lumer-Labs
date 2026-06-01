@@ -78,27 +78,27 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section id="services" ref={containerRef} className="bg-transparent text-white py-20 relative overflow-hidden min-h-screen flex flex-col pt-32">
+    <section id="services" ref={containerRef} className="bg-transparent text-white pt-20 sm:pt-24 lg:pt-32 pb-10 lg:py-20 relative overflow-hidden min-h-screen flex flex-col justify-center">
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center relative z-10 px-4 md:px-8 shrink-0">
-        <div className="inline-block border border-blue-600 rounded-full px-6 py-2 mb-6">
-          <span className="text-blue-500 font-medium">Struggling to Build Your Brand ?</span>
+        <div className="inline-block border border-blue-600 rounded-full px-4 py-1.5 sm:px-6 sm:py-2 mb-3 sm:mb-4">
+          <span className="text-blue-500 font-medium text-xs sm:text-sm">Struggling to Build Your Brand ?</span>
         </div>
 
-        <div className="w-px h-8 bg-white/30 mb-6"></div>
+        <div className="w-px h-4 sm:h-6 bg-white/30 mb-3 sm:mb-4"></div>
 
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">We Handle It</h2>
+        <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-4">We Handle It</h2>
 
-        <div className="w-px h-8 bg-white/30 mb-6"></div>
+        <div className="w-px h-4 sm:h-6 bg-white/30 mb-3 sm:mb-4"></div>
 
-        <p className="text-gray-300 max-w-2xl mx-auto text-lg md:text-xl">
+        <p className="text-gray-300 max-w-2xl mx-auto text-xs sm:text-sm lg:text-base leading-relaxed px-2">
           We provide end-to-end digital solutions to elevate your online presence. From driving targeted traffic to building robust web platforms, our expert team manages the complexities of the digital landscape so you can focus on scaling your business.
         </p>
       </div>
 
-      <div className="mt-16 w-full flex-grow flex items-center mb-16 overflow-hidden">
-        <div ref={trackRef} className="flex gap-6 px-10 md:px-20 w-max items-center">
+      <div className="mt-4 sm:mt-6 lg:mt-16 w-full flex-grow-0 lg:flex-grow flex items-start lg:items-center mb-6 lg:mb-16 overflow-hidden">
+        <div ref={trackRef} className="flex gap-4 sm:gap-6 px-6 sm:px-10 md:px-20 w-max items-center">
           {services.map((service, idx) => (
-            <div key={idx} className="w-[300px] h-[200px] shrink-0 group">
+            <div key={idx} className="w-[240px] h-[160px] sm:w-[280px] sm:h-[180px] lg:w-[300px] lg:h-[200px] shrink-0 group">
               <BorderGlow
                 className="w-full h-full"
                 edgeSensitivity={30}
@@ -112,13 +112,13 @@ const ServicesSection = () => {
                 colors={['#3b82f6', '#6366f1', '#60a5fa']}
               >
                 <div className="relative w-full h-full overflow-hidden rounded-[20px]">
-                  <h3 className="absolute top-6 left-6 text-xl font-semibold text-white/90 whitespace-pre-line leading-tight z-10">
+                  <h3 className="absolute top-4 left-4 sm:top-6 sm:left-6 text-sm sm:text-base lg:text-xl font-semibold text-white/90 whitespace-pre-line leading-tight z-10">
                     {service.title}
                   </h3>
                   <img
                     src={service.icon}
                     alt={service.title}
-                    className="absolute -bottom-8 -right-8 w-42 h-42 object-contain opacity-30 group-hover:opacity-60 transition-opacity duration-300"
+                    className="absolute -bottom-6 -right-6 w-28 h-28 sm:-bottom-8 sm:-right-8 sm:w-36 sm:h-36 lg:w-42 lg:h-42 object-contain opacity-30 group-hover:opacity-60 transition-opacity duration-300"
                   />
                 </div>
               </BorderGlow>
