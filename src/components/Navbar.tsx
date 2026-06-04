@@ -38,7 +38,7 @@ export default function Navbar() {
       {/* Logo at Top Left */}
       <div 
         ref={logoRef} 
-        className="absolute lg:fixed left-6 sm:left-12 lg:left-12 top-10 flex items-center gap-3 pointer-events-auto z-[1000]"
+        className="absolute lg:fixed left-6 sm:left-12 lg:left-12 top-10 flex items-center gap-3 pointer-events-auto z-[995]"
       >
         <img src="/lumer_labs_logo_svg.svg" alt="LumerLabs Logo" className="w-10 h-10 lg:w-12 lg:h-12" />
         <span className="text-white font-semibold text-xl lg:text-2xl tracking-tight">LumerLabs</span>
@@ -73,6 +73,7 @@ export default function Navbar() {
           { label: 'Services', href: '/#services' },
           { label: 'Methods', href: '/#methods' },
           { label: 'About Us', href: '/about' },
+          { label: 'Pricing', href: '/pricing' },
           { label: 'Contact', href: '/contact' },
         ].map(({ label, href }) => (
           <a
@@ -122,6 +123,7 @@ export default function Navbar() {
                 { label: 'Services', href: '/#services' },
                 { label: 'Methods', href: '/#methods' },
                 { label: 'About Us', href: '/about' },
+                { label: 'Pricing', href: '/pricing' },
                 { label: 'Contact', href: '/contact' },
               ].map(({ label, href }) => (
                 <a

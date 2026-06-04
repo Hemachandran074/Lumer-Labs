@@ -50,7 +50,7 @@ export default function ContactPageLink() {
     <section 
       id="contact" 
       ref={containerRef} 
-      className="relative w-full px-4 sm:px-8 py-24 min-h-[90vh] flex items-center justify-center bg-transparent"
+      className="relative w-full px-4 sm:px-8 py-24 min-h-[90vh] flex items-center justify-center section-stars-bg"
     >
       <div 
         ref={cardRef}
@@ -58,7 +58,7 @@ export default function ContactPageLink() {
       >
         {/* Background Image with parallax class */}
         <div 
-          className="about-bg absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none opacity-90"
+          className="about-bg absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none opacity-70"
           style={{
             backgroundImage: `url('/about_us_bg.jpg')`,
             backgroundSize: 'cover',

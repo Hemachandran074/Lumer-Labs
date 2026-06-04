@@ -24,3 +24,4 @@ pnpm-debug.log*
 .idea/
 
 public/team
+public/services_img

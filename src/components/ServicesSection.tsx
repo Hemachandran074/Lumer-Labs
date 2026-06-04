@@ -78,7 +78,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section id="services" ref={containerRef} className="bg-transparent text-white pt-20 sm:pt-24 lg:pt-32 pb-10 lg:py-20 relative overflow-hidden min-h-screen flex flex-col justify-center">
+    <section id="services" ref={containerRef} className="section-stars-bg text-white pt-20 sm:pt-24 lg:pt-32 pb-10 lg:py-20 relative overflow-hidden min-h-screen flex flex-col justify-center">
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center relative z-10 px-4 md:px-8 shrink-0">
         <div className="inline-block border border-blue-600 rounded-full px-4 py-1.5 sm:px-6 sm:py-2 mb-3 sm:mb-4">
           <span className="text-blue-500 font-medium text-xs sm:text-sm">Struggling to Build Your Brand ?</span>

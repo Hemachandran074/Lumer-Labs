@@ -218,13 +218,13 @@ const TermsOfPolicy = () => {
   };
 
   return (
-    <div ref={containerRef} className="bg-transparent min-h-screen text-white pt-32 pb-24 relative">
+    <div ref={containerRef} className="section-stars-bg min-h-screen text-white pt-32 pb-24 relative">
 
       {/* Banner Section */}
       <div className="max-w-[95vw] lg:max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="parallax-container relative w-full h-[35vh] md:h-[45vh] rounded-[2.5rem] overflow-hidden mb-16 reveal-up shadow-2xl isolate flex flex-col justify-center items-center text-center">
           <div
-            className="policy-parallax absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none"
+            className="policy-parallax absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none opacity-100"
             style={{
               backgroundImage: "url('/pop-bg.jpg')",
               backgroundSize: 'cover',

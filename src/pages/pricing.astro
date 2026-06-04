@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar';
+import PricingView from '../components/PricingView';
+import Footer from '../components/Footer';
+---
+
+<Layout title="Pricing Plans — LumerLabs">
+  <Navbar client:load />
+  <main>
+    <PricingView client:load />
+  </main>
+  <Footer client:load />
+</Layout>

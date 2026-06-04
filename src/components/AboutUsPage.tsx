@@ -55,7 +55,7 @@ export default function AboutUsPage() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative w-full flex flex-col items-center justify-start px-6 sm:px-12 pt-40 pb-32 overflow-hidden"
+      className="relative w-full flex flex-col items-center justify-start px-6 sm:px-12 pt-40 pb-32 overflow-hidden section-stars-bg"
     >
       {/* Background Mask */}
       <div className="absolute inset-0 z-0" />
@@ -90,7 +90,7 @@ export default function AboutUsPage() {
             >
               <span
                 className="text-[3rem] sm:text-[4rem] lg:text-[5rem] font-bold leading-none tracking-tighter select-none"
-                style={{ color: 'transparent', WebkitTextStroke: '1px rgba(255, 255, 255, 0.5)' }}
+                style={{ color: 'transparent', WebkitTextStroke: '1px rgba(255, 255, 255, 1)' }}
               >
                 {v.number}
               </span>

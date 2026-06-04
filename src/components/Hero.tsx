@@ -39,7 +39,7 @@ export default function Hero() {
     <section 
       id="home"
       ref={containerRef} 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden section-stars-bg"
     >
 
       

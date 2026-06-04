@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 export default function Footer() {
   return (
-    <footer className="relative w-full py-20 px-6 sm:px-12 overflow-hidden border-t border-white/5">
+    <footer className="relative w-full py-20 px-6 sm:px-12 overflow-hidden border-t border-white/5 section-stars-bg">
 
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
@@ -24,6 +24,7 @@ export default function Footer() {
               <li><a href="/#services" className="text-slate-500 hover:text-white text-sm transition-colors">Services</a></li>
               <li><a href="/#methods" className="text-slate-500 hover:text-white text-sm transition-colors">Methods</a></li>
               <li><a href="/about" className="text-slate-500 hover:text-white text-sm transition-colors">About Us</a></li>
+              <li><a href="/pricing" className="text-slate-500 hover:text-white text-sm transition-colors">Pricing</a></li>
               <li><a href="/contact" className="text-slate-500 hover:text-white text-sm transition-colors">Contact</a></li>
             </ul>
           </div>

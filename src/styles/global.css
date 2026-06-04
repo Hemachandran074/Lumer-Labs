@@ -50,11 +50,17 @@
 
 body {
   background-color: #050505 !important;
-  background-image: url('/stars-bg.jpg') !important;
+  background-image: linear-gradient(rgba(5, 5, 5, 0.3), rgba(5, 5, 5, 0.3)), url('/stars-bg.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
+}
+
+.section-stars-bg {
+  background-image: linear-gradient(rgba(5, 5, 5, 0.3), rgba(5, 5, 5, 0.3)), url('/stars-bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 /* Lenis recommended default styles */

@@ -75,7 +75,7 @@ const MethodsSection = () => {
     <section 
       id="methods"
       ref={containerRef} 
-      className="bg-transparent text-white py-16 sm:py-24 lg:py-32 min-h-screen relative overflow-hidden flex flex-col justify-center"
+      className="section-stars-bg text-white py-16 sm:py-24 lg:py-32 min-h-screen relative overflow-hidden flex flex-col justify-center"
     >
       <div className="max-w-6xl mx-auto w-full px-4 md:px-12 flex flex-col shrink-0">
         <div className="text-center mb-6 sm:mb-10 lg:mb-16">

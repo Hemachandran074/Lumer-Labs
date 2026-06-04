@@ -49,14 +49,14 @@ const ContactView = () => {
   };
 
   return (
-    <div ref={containerRef} className="bg-transparent min-h-screen text-white pt-32 pb-24">
+    <div ref={containerRef} className="section-stars-bg min-h-screen text-white pt-32 pb-24">
       
       {/* Banner Section Container - adjust max-w-[...] here to change width */}
       <div className="max-w-[95vw] lg:max-w-[1400px] mx-auto px-4 md:px-8 shrink-0">
         {/* Height classes (e.g., h-[45vh]) control banner height */}
         <div className="parallax-container relative w-full h-[45vh] md:h-[60vh] rounded-[2.5rem] overflow-hidden mb-24 reveal-up shadow-2xl isolate">
           <div 
-            className="contact-parallax absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none"
+            className="contact-parallax absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none opacity-100"
             style={{
               backgroundImage: "url('/contact-bg.jpg')",
               backgroundSize: 'cover',
@@ -88,8 +88,8 @@ const ContactView = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-8">
               <div className="reveal-up relative">
                 <h3 className="text-white font-semibold mb-4 text-xl tracking-wide">Call Us</h3>
-                <p className="text-gray-400 text-sm mb-1">+91 97876 16989</p>
-                <p className="text-gray-500 text-sm">Mon - Sat. 10AM - 7AM IST</p>
+                <p className="text-gray-400 text-sm mb-1">+91 90255 07436</p>
+                <p className="text-gray-500 text-sm">Mon - Sat. 10AM - 7PM IST</p>
               </div>
               
               <div className="reveal-up relative">
