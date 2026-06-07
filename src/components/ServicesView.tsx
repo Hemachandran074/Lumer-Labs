@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 type ActiveTab = 'web' | 'social' | 'design' | 'video' | 'seo';
 
-const PricingView = () => {
+const ServicesView = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState<ActiveTab>('web');
 
@@ -24,7 +24,7 @@ const PricingView = () => {
       });
 
       // Parallax effect for the hero banner background
-      gsap.to('.pricing-parallax', {
+      gsap.to('.services-parallax', {
         yPercent: 15,
         ease: 'none',
         scrollTrigger: {
@@ -46,29 +46,29 @@ const PricingView = () => {
   return (
     <div ref={containerRef} className="section-stars-bg min-h-screen text-white pt-32 pb-24">
       {/* Banner Section Container */}
-      <div className="max-w-[95vw] lg:max-w-[1400px] mx-auto px-4 md:px-8 shrink-0">
+      {/* <div className="max-w-[95vw] lg:max-w-[1400px] mx-auto px-4 md:px-8 shrink-0">
         <div className="parallax-container relative w-full h-[35vh] md:h-[45vh] rounded-[2.5rem] overflow-hidden mb-16 reveal-up shadow-2xl isolate flex flex-col justify-center items-center text-center">
           <div 
-            className="pricing-parallax absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none opacity-100"
+            className="services-parallax absolute -top-[10%] left-0 w-full h-[120%] z-[-1] pointer-events-none opacity-100"
             style={{
               backgroundImage: "url('/pricing-bg.jpg')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
             }}
-          />
+          /> */}
           {/* subtle overlay to ensure text pops */}
-          <div className="absolute inset-0 bg-black/40 z-[1]" />
+          {/* <div className="absolute inset-0 bg-black/40 z-[1]" />
           <div className="relative z-[2] px-4">
             <h1 className="text-4xl md:text-6xl font-medium tracking-normal text-white drop-shadow-2xl mb-4">
-              Pricing Plans
+              Our Services
             </h1>
             <p className="text-gray-200 text-lg md:text-xl font-light max-w-2xl mx-auto">
-              Clear, transparent, and strategic pricing tailored to your brand's growth
+              Clear, transparent, and strategic services tailored to your brand's growth
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 shrink-0">
@@ -99,7 +99,7 @@ const PricingView = () => {
           </div>
         </div>
 
-        {/* Pricing Content Containers with Glassmorphism */}
+        {/* Services Content Containers with Glassmorphism */}
         <div className="w-full transition-all duration-500 ease-in-out">
           
           {/* 1. Web Development */}
@@ -123,12 +123,6 @@ const PricingView = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="hover:bg-white/5 border-b border-white/5 transition-colors">
-                      <td className="p-4 sm:p-5 text-sm font-semibold text-white">Price</td>
-                      <td className="p-4 sm:p-5 text-sm text-white font-bold">₹19,999</td>
-                      <td className="p-4 sm:p-5 text-sm text-white font-bold">₹39,999</td>
-                      <td className="p-4 sm:p-5 text-sm text-white font-bold">₹79,999+</td>
-                    </tr>
                     <tr className="hover:bg-white/5 border-b border-white/5 transition-colors">
                       <td className="p-4 sm:p-5 text-sm font-semibold text-white">Page Limit</td>
                       <td className="p-4 sm:p-5 text-sm text-slate-300">Up to 5 Pages</td>
@@ -193,12 +187,6 @@ const PricingView = () => {
                   </thead>
                   <tbody>
                     <tr className="hover:bg-white/5 border-b border-white/5 transition-colors">
-                      <td className="p-4 sm:p-5 text-sm font-semibold text-white">Monthly Retainer</td>
-                      <td className="p-4 sm:p-5 text-sm text-white font-bold">₹9,999/mo</td>
-                      <td className="p-4 sm:p-5 text-sm text-white font-bold">₹19,999/mo</td>
-                      <td className="p-4 sm:p-5 text-sm text-white font-bold">₹34,999/mo</td>
-                    </tr>
-                    <tr className="hover:bg-white/5 border-b border-white/5 transition-colors">
                       <td className="p-4 sm:p-5 text-sm font-semibold text-white">Post Frequency</td>
                       <td className="p-4 sm:p-5 text-sm text-slate-300">8 Posts / Month</td>
                       <td className="p-4 sm:p-5 text-sm text-slate-300">16 Posts / Month</td>
@@ -254,20 +242,18 @@ const PricingView = () => {
                       <thead>
                         <tr className="bg-white/10 border-b border-white/10">
                           <th className="p-4 text-sm font-semibold text-white">Service</th>
-                          <th className="p-4 text-sm font-semibold text-white">Price Range</th>
                         </tr>
                       </thead>
                       <tbody>
                         {[
-                          { name: 'Logo Design', price: '₹3,999 – ₹9,999' },
-                          { name: 'Logo Redesign / Rebranding', price: '₹5,999 – ₹14,999' },
-                          { name: 'Brand Identity Kit', price: '₹9,999 – ₹24,999' },
-                          { name: 'Business Card Design', price: '₹999 – ₹2,999' },
-                          { name: 'Company Profile Design', price: '₹4,999 – ₹14,999' },
-                        ].map((row, i) => (
+                          'Logo Design',
+                          'Logo Redesign / Rebranding',
+                          'Brand Identity Kit',
+                          'Business Card Design',
+                          'Company Profile Design',
+                        ].map((name, i) => (
                           <tr key={i} className="hover:bg-white/5 border-b border-white/5 last:border-0 transition-colors">
-                            <td className="p-4 text-sm text-slate-300">{row.name}</td>
-                            <td className="p-4 text-sm text-white font-bold">{row.price}</td>
+                            <td className="p-4 text-sm text-slate-300">{name}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -283,20 +269,18 @@ const PricingView = () => {
                       <thead>
                         <tr className="bg-white/10 border-b border-white/10">
                           <th className="p-4 text-sm font-semibold text-white">Service</th>
-                          <th className="p-4 text-sm font-semibold text-white">Unit Price</th>
                         </tr>
                       </thead>
                       <tbody>
                         {[
-                          { name: 'Instagram Post Design', price: '₹399 / Post' },
-                          { name: 'Carousel Post Design', price: '₹999 / Carousel' },
-                          { name: 'Story Design', price: '₹199 / Story' },
-                          { name: 'Ad Creative Design', price: '₹799 / Design' },
-                          { name: 'Festival Creative Design', price: '₹499 / Design' },
-                        ].map((row, i) => (
+                          'Instagram Post Design',
+                          'Carousel Post Design',
+                          'Story Design',
+                          'Ad Creative Design',
+                          'Festival Creative Design',
+                        ].map((name, i) => (
                           <tr key={i} className="hover:bg-white/5 border-b border-white/5 last:border-0 transition-colors">
-                            <td className="p-4 text-sm text-slate-300">{row.name}</td>
-                            <td className="p-4 text-sm text-white font-bold">{row.price}</td>
+                            <td className="p-4 text-sm text-slate-300">{name}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -312,20 +296,18 @@ const PricingView = () => {
                       <thead>
                         <tr className="bg-white/10 border-b border-white/10">
                           <th className="p-4 text-sm font-semibold text-white">Service</th>
-                          <th className="p-4 text-sm font-semibold text-white">Price Range</th>
                         </tr>
                       </thead>
                       <tbody>
                         {[
-                          { name: 'Poster & Flyer Design', price: '₹999 – ₹2,999' },
-                          { name: 'Brochure (Bi-Fold)', price: '₹2,999 – ₹5,999' },
-                          { name: 'Brochure (Tri-Fold)', price: '₹3,999 – ₹7,999' },
-                          { name: 'Banner & Standee Design', price: '₹1,499 – ₹4,999' },
-                          { name: 'Presentation / Pitch Deck', price: '₹2,999 – ₹14,999' },
-                        ].map((row, i) => (
+                          'Poster & Flyer Design',
+                          'Brochure (Bi-Fold)',
+                          'Brochure (Tri-Fold)',
+                          'Banner & Standee Design',
+                          'Presentation / Pitch Deck',
+                        ].map((name, i) => (
                           <tr key={i} className="hover:bg-white/5 border-b border-white/5 last:border-0 transition-colors">
-                            <td className="p-4 text-sm text-slate-300">{row.name}</td>
-                            <td className="p-4 text-sm text-white font-bold">{row.price}</td>
+                            <td className="p-4 text-sm text-slate-300">{name}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -356,16 +338,14 @@ const PricingView = () => {
                       <thead>
                         <tr className="bg-white/10 border-b border-white/10">
                           <th className="p-4 text-sm font-semibold text-white">Photography Services</th>
-                          <th className="p-4 text-sm font-semibold text-white">Price</th>
                         </tr>
                       </thead>
                       <tbody>
                         {[
-                          { name: 'Product Photography', price: '₹299 – ₹999 / Product' },
-                        ].map((row, i) => (
+                          'Product Photography',
+                        ].map((name, i) => (
                           <tr key={i} className="hover:bg-white/5 border-b border-white/5 last:border-0 transition-colors">
-                            <td className="p-4 text-sm text-slate-300">{row.name}</td>
-                            <td className="p-4 text-sm text-white font-bold">{row.price}</td>
+                            <td className="p-4 text-sm text-slate-300">{name}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -381,19 +361,17 @@ const PricingView = () => {
                       <thead>
                         <tr className="bg-white/10 border-b border-white/10">
                           <th className="p-4 text-sm font-semibold text-white">Video Production</th>
-                          <th className="p-4 text-sm font-semibold text-white">Price Range</th>
                         </tr>
                       </thead>
                       <tbody>
                         {[
-                          { name: 'Promotional Video (30–60s)', price: '₹6,999 – ₹19,999' },
-                          { name: 'Brand Story Video', price: '₹14,999 – ₹39,999' },
-                          { name: 'YouTube Shorts (4 Video Pkg)', price: '₹9,999' },
-                          { name: 'Professional Ad Shoot', price: '₹15,000 – ₹50,000+' },
-                        ].map((row, i) => (
+                          'Promotional Video (30–60s)',
+                          'Brand Story Video',
+                          'YouTube Shorts (4 Video Pkg)',
+                          'Professional Ad Shoot',
+                        ].map((name, i) => (
                           <tr key={i} className="hover:bg-white/5 border-b border-white/5 last:border-0 transition-colors">
-                            <td className="p-4 text-sm text-slate-300">{row.name}</td>
-                            <td className="p-4 text-sm text-white font-bold">{row.price}</td>
+                            <td className="p-4 text-sm text-slate-300">{name}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -425,12 +403,6 @@ const PricingView = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="hover:bg-white/5 border-b border-white/5 transition-colors">
-                      <td className="p-4 sm:p-5 text-sm font-semibold text-white">Monthly Fee</td>
-                      <td className="p-4 sm:p-5 text-sm text-white font-bold">₹9,999/mo</td>
-                      <td className="p-4 sm:p-5 text-sm text-white font-bold">₹19,999/mo</td>
-                      <td className="p-4 sm:p-5 text-sm text-white font-bold">₹34,999/mo</td>
-                    </tr>
                     <tr className="hover:bg-white/5 border-b border-white/5 transition-colors">
                       <td className="p-4 sm:p-5 text-sm font-semibold text-white">Core Technicals</td>
                       <td className="p-4 sm:p-5 text-sm text-slate-300">Website Audit</td>
@@ -467,4 +439,4 @@ const PricingView = () => {
   );
 };
 
-export default PricingView;
+export default ServicesView;

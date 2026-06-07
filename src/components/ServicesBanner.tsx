@@ -5,7 +5,7 @@ import ContactButton from './ContactButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function PricingBanner() {
+export default function ServicesBanner() {
   const containerRef = useRef<HTMLDivElement>(null);
   const parallaxRef = useRef<HTMLDivElement>(null);
 
@@ -27,7 +27,7 @@ export default function PricingBanner() {
       });
 
       // Reveal animation for text and button
-      gsap.from('.pricing-banner-reveal', {
+      gsap.from('.services-banner-reveal', {
         y: 40,
         opacity: 0,
         duration: 1,
@@ -73,14 +73,14 @@ export default function PricingBanner() {
 
         {/* Content */}
         <div className="relative z-[2] flex flex-col items-center gap-6 pointer-events-auto max-w-3xl">
-          <h2 className="pricing-banner-reveal text-white font-medium text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1]">
-            Pricing Plans
+          <h2 className="services-banner-reveal text-white font-medium text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1]">
+            Our Services
           </h2>
-          <p className="pricing-banner-reveal text-gray-200 text-base sm:text-lg md:text-xl font-light">
-            Clear, transparent, and strategic pricing tailored to your brand's growth
+          <p className="services-banner-reveal text-gray-200 text-base sm:text-lg md:text-xl font-light">
+            Clear, transparent, and strategic services tailored to your brand's growth
           </p>
-          <div className="pricing-banner-reveal">
-            <ContactButton href="/pricing" label="View Pricing" />
+          <div className="services-banner-reveal">
+            <ContactButton href="/services" label="View Services" />
           </div>
         </div>
       </div>

@@ -90,7 +90,7 @@ export default function AboutUsPage() {
             >
               <span
                 className="text-[3rem] sm:text-[4rem] lg:text-[5rem] font-bold leading-none tracking-tighter select-none"
-                style={{ color: 'transparent', WebkitTextStroke: '1px rgba(255, 255, 255, 1)' }}
+                // style={{ color: 'transparent', WebkitTextStroke: '1px rgba(255, 255, 255, 1)' }}
               >
                 {v.number}
               </span>

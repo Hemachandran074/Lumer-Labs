@@ -72,8 +72,8 @@ export default function Navbar() {
           { label: 'Home', href: '/#home' },
           { label: 'Services', href: '/#services' },
           { label: 'Methods', href: '/#methods' },
-          { label: 'About Us', href: '/about' },
-          { label: 'Pricing', href: '/pricing' },
+          // { label: 'About Us', href: '/about' },
+          { label: 'Services', href: '/services' },
           { label: 'Contact', href: '/contact' },
         ].map(({ label, href }) => (
           <a
@@ -122,8 +122,8 @@ export default function Navbar() {
                 { label: 'Home', href: '/#home' },
                 { label: 'Services', href: '/#services' },
                 { label: 'Methods', href: '/#methods' },
-                { label: 'About Us', href: '/about' },
-                { label: 'Pricing', href: '/pricing' },
+                // { label: 'About Us', href: '/about' },
+                { label: 'Services', href: '/services' },
                 { label: 'Contact', href: '/contact' },
               ].map(({ label, href }) => (
                 <a
