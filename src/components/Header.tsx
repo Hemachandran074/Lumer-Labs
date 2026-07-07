@@ -50,7 +50,7 @@ export function Header() {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "hero")}
-            className="text-sm font-primary font-semibold text-[#F5F5F7] hover:text-white transition-colors duration-300 pointer-events-auto"
+            className="text-lg font-primary font-semibold text-[#F5F5F7] hover:text-white transition-colors duration-300 pointer-events-auto"
             id="header-logo"
           >
             LumerLabs

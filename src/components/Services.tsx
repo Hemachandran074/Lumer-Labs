@@ -12,12 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    title: "Graphic Designing",
-    desc: "Create stunning visual assets that command attention and communicate your brand's message effectively. From brand guidelines to modern marketing collateral, we shape cohesive visual experiences across all touchpoints.",
-  },
-  {
-    title: "Web Development",
-    desc: "Build fast, secure, and scalable websites tailored to your business needs. Whether you're launching a company website, customer portal, or e-commerce platform, we develop solutions that perform reliably and support long-term growth.",
+    title: "AI Business Automation",
+    desc: "Reduce manual work and improve efficiency with intelligent automation solutions. We connect your tools, automate repetitive tasks, and create workflows that help your business operate more efficiently.",
   },
   {
     title: "App Development",
@@ -28,16 +24,20 @@ const services = [
     desc: "Build a brand that looks professional, memorable, and consistent across every customer touchpoint. From logo creation to complete brand guidelines, we design visual identities that help your business stand out and build trust.",
   },
   {
-    title: "Video and Media",
-    desc: "Through still images or moving media, tell your story visually. From the first frame through the edited video, we capture and highlight your brand's vision with professional cinematic output.",
+    title: "Graphic Designing",
+    desc: "Create stunning visual assets that command attention and communicate your brand's message effectively. From brand guidelines to modern marketing collateral, we shape cohesive visual experiences across all touchpoints.",
   },
   {
     title: "SEO and Growth",
     desc: "Help more customers discover your business online through proven search optimization strategies. We improve your visibility, attract qualified traffic, and support sustainable growth.",
   },
   {
-    title: "AI Business Automation",
-    desc: "Reduce manual work and improve efficiency with intelligent automation solutions. We connect your tools, automate repetitive tasks, and create workflows that help your business operate more efficiently.",
+    title: "Video and Media",
+    desc: "Through still images or moving media, tell your story visually. From the first frame through the edited video, we capture and highlight your brand's vision with professional cinematic output.",
+  },
+  {
+    title: "Web Development",
+    desc: "Build fast, secure, and scalable websites tailored to your business needs. Whether you're launching a company website, customer portal, or e-commerce platform, we develop solutions that perform reliably and support long-term growth.",
   },
 ];
 

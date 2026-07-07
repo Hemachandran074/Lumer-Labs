@@ -23,36 +23,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 const pricingPlans = [
   {
-    title: "Graphic Designing",
-    image: plan1Img,
-    description: "Create stunning visual assets that command attention and communicate your brand's message effectively. From brand guidelines to modern marketing collateral, we shape cohesive visual experiences across all touchpoints.",
+    title: "AI Business Automation",
+    image: plan6Img,
+    description: "Reduce manual work and improve efficiency with intelligent automation solutions.We connect your tools,automate repetitive tasks,and create workflows that help your business operate more efficiently.",
     services: [
-      "Brand Identity Design",
-      "Custom Logo Systems",
-      "Social Media Graphics",
-      "Marketing Collateral",
-      "Packaging Design",
-      "Presentation Layouts",
-      "Vector Illustrations",
-      "Print Media Assets"
+      "Workflow Automation Systems",
+      "CRM Automation",
+      "Customer Onboarding Automation",
+      "API Integrations",
+      "Data Processing Automation",
+      "WhatsApp & CRM Automation",
+      "Business Process Automation",
+      "Automated Reporting & Notification Systems",
     ],
-    price: "₹3000"
-  },
-  {
-    title: "Web Development",
-    image: plan2Img,
-    description: "Build fast,secure,and scalable websites tailored to your business needs.Whether you're launching a company website, customer portal,or e-commerce platform,we develop solutions that perform reliably and support long-term growth.",
-    services: [
-      "Custom Website Development",
-      "Full-Stack Web Applications",
-      "B2B & B2C E-Commerce Platforms",
-      "Next.js Development",
-      "Database Integration",
-      "API Development & Integration",
-      "Payment Gateway Integration",
-      "Website Performance Optimization",
-    ],
-    price: "₹3000"
+    price: "₹70,000"
   },
   {
     title: "App Development",
@@ -68,7 +52,7 @@ const pricingPlans = [
       "Offline Functionality",
       "App Store & Play Store Deployment",
     ],
-    price: "₹3000"
+    price: "₹30,000"
   },
   {
     title: "Brand Identity Design",
@@ -84,23 +68,23 @@ const pricingPlans = [
       "Custom Illustrations",
       "Print & Digital Assets",
     ],
-    price: "₹3000"
+    price: "₹24,999"
   },
   {
-    title: "Video and Media",
-    image: plan5Img,
-    description: "Through still images or moving media, you can tell your story visually about your business. From the first frame through the edited video, we create an illustrative picture of your company's vision and highlight the best possible image of you and/or your business on film.",
+    title: "Graphic Designing",
+    image: plan1Img,
+    description: "Create stunning visual assets that command attention and communicate your brand's message effectively. From brand guidelines to modern marketing collateral, we shape cohesive visual experiences across all touchpoints.",
     services: [
-      "Brand Core Strategy",
-      "Visual Brand Audit",
-      "Custom Typography Suite",
-      "Harmonious HSL Palettes",
-      "Brand Style Guidelines",
-      "Copywriting & Voice Setup",
-      "Collateral Design Patterns",
-      "Brand Consulting Services"
+      "Brand Identity Design",
+      "Custom Logo Systems",
+      "Social Media Graphics",
+      "Marketing Collateral",
+      "Packaging Design",
+      "Presentation Layouts",
+      "Vector Illustrations",
+      "Print Media Assets"
     ],
-    price: "₹3000"
+    price: "₹1,800/design"
   },
   {
     title: "SEO and Growth",
@@ -116,23 +100,39 @@ const pricingPlans = [
       "Performance Monitoring",
       "Review Generation Strategies",
     ],
-    price: "₹3000"
+    price: "₹9,999/month"
   },
   {
-    title: "AI Business Automation",
-    image: plan6Img,
-    description: "Reduce manual work and improve efficiency with intelligent automation solutions.We connect your tools,automate repetitive tasks,and create workflows that help your business operate more efficiently.",
+    title: "Video and Media",
+    image: plan5Img,
+    description: "Through still images or moving media, you can tell your story visually about your business. From the first frame through the edited video, we create an illustrative picture of your company's vision and highlight the best possible image of you and/or your business on film.",
     services: [
-      "Workflow Automation Systems",
-      "CRM Automation",
-      "Customer Onboarding Automation",
-      "API Integrations",
-      "Data Processing Automation",
-      "WhatsApp & CRM Automation",
-      "Business Process Automation",
-      "Automated Reporting & Notification Systems",
+      "Brand Core Strategy",
+      "Visual Brand Audit",
+      "Custom Typography Suite",
+      "Harmonious HSL Palettes",
+      "Brand Style Guidelines",
+      "Copywriting & Voice Setup",
+      "Collateral Design Patterns",
+      "Brand Consulting Services"
     ],
-    price: "₹3000"
+    price: "₹6000/hr"
+  },
+  {
+    title: "Web Development",
+    image: plan2Img,
+    description: "Build fast,secure,and scalable websites tailored to your business needs.Whether you're launching a company website, customer portal,or e-commerce platform,we develop solutions that perform reliably and support long-term growth.",
+    services: [
+      "Custom Website Development",
+      "Full-Stack Web Applications",
+      "B2B & B2C E-Commerce Platforms",
+      "Next.js Development",
+      "Database Integration",
+      "API Development & Integration",
+      "Payment Gateway Integration",
+      "Website Performance Optimization",
+    ],
+    price: "₹15,000"
   },
 ];
 
@@ -251,7 +251,7 @@ export default function ServicesPage() {
                         <span className="text-[10px] uppercase tracking-widest text-[#8E8E93] font-mono mb-1 font-medium">
                           Starts From
                         </span>
-                        <span className="text-2xl md:text-3xl font-primary font-bold text-white tracking-tight">
+                        <span className="text-xl md:text-2xl font-primary font-semi-bold text-white tracking-tight">
                           {plan.price}
                         </span>
                       </div>

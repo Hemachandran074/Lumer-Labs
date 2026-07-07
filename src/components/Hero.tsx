@@ -181,7 +181,7 @@ export function Hero() {
           className="absolute inset-x-0 bottom-12 px-8 md:px-16 flex flex-col md:flex-row md:justify-between md:items-end gap-6 opacity-0 translate-y-8 z-30 pointer-events-none"
         >
           <div className="max-w-md">
-            <p className="text-[#8E8E93] text-xs uppercase tracking-widest font-semibold mb-2">
+            <p className="text-[#8E8E93] text-lg uppercase tracking-widest font-semibold mb-2">
               Lumer Labs
             </p>
             <h2 className="text-2xl md:text-3xl font-primary font-light text-[#F5F5F7] leading-tight tracking-tight">
