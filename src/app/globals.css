@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* Local Font Face Declarations */
+@font-face {
+  font-family: 'PrimaryFont';
+  src: url('../fonts/PrimaryFont/GcGatuzodemoRegular-ovZ6d.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PrimaryFont';
+  src: url('../fonts/PrimaryFont/GcGatuzodemoMedium-gwoJ1.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PrimaryFont';
+  src: url('../fonts/PrimaryFont/GcGatuzodemoSemiBold-4np6p.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PrimaryFont';
+  src: url('../fonts/PrimaryFont/GcGatuzodemoBold-drLJX.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PrimaryFont';
+  src: url('../fonts/PrimaryFont/GcGatuzodemoExtraBold-PVD5m.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SecondaryFont';
+  src: url('../fonts/SecondaryFont/BasicallyAMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SecondaryFont';
+  src: url('../fonts/SecondaryFont/BasicallyAMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SecondaryFont';
+  src: url('../fonts/SecondaryFont/BasicallyAMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SecondaryFont';
+  src: url('../fonts/SecondaryFont/BasicallyAMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Custom CSS variables for theme standardisation */
+:root {
+  --background: #000000;
+  --foreground: #F5F5F7;
+}
+
+/* Tailwind CSS v4 Theme configuration mapping */
+@theme {
+  --font-primary: 'PrimaryFont', sans-serif;
+  --font-sans: 'SecondaryFont', monospace;
+  --font-mono: 'SecondaryFont', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@layer base {
+  body {
+    @apply block min-w-[320px] min-h-screen relative m-0 bg-black text-[#F5F5F7] overflow-x-hidden;
+    font-family: 'SecondaryFont', monospace;
+  }
+}
+
+/* Custom premium visual styles */
+::selection {
+  background-color: hsl(45 76% 63% / 0.3);
+  color: #F5F5F7;
+}
+
+/* Hide scrollbar for standard cinematic feeling but keep scroll capability */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070708;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c1c1e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c2c2e;
+}
+
+/* GSAP and Layout helper classes */
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.word-inner {
+  display: inline-block;
+  transform-origin: left bottom;
+}
+
+.char-mask {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.char-inner {
+  display: inline-block;
+  line-height: 1;
+  transform-origin: bottom left;
+  white-space: pre;
+}

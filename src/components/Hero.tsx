@@ -1,68 +1,231 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+'use client';
 
-export default function Hero() {
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LUMERLABS_PATH_DATA } from "../../logoData";
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Load the video directly from the Next.js static public path
+const videoSrc = "/149141-795734150_medium.mp4";
+
+export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const starsRef = useRef<HTMLDivElement>(null);
+  const logoContainerRef = useRef<HTMLDivElement>(null);
+  const logoMaskRef = useRef<SVGPathElement>(null);
+  const whiteLogoRef = useRef<SVGPathElement>(null);
+  const svgOverlayRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoWrapperRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Animate the text in
-      gsap.from([subtitleRef.current, titleRef.current], {
-        y: 30,
-        opacity: 0,
-        duration: 1.2,
-        stagger: 0.2,
-        ease: 'power3.out',
-        delay: 0.5,
-      });
+    const container = containerRef.current;
+    const logoContainer = logoContainerRef.current;
+    const logoMask = logoMaskRef.current;
+    const whiteLogo = whiteLogoRef.current;
+    const svgOverlay = svgOverlayRef.current;
+    const video = videoRef.current;
+    const videoWrapper = videoWrapperRef.current;
+    const content = contentRef.current;
 
-      // Subtle parallax on the stars
-      gsap.to(starsRef.current, {
-        y: '10%',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      });
-    }, containerRef);
+    if (
+      !container ||
+      !logoContainer ||
+      !logoMask ||
+      !whiteLogo ||
+      !svgOverlay ||
+      !video ||
+      !videoWrapper ||
+      !content
+    )
+      return;
 
-    return () => ctx.revert();
+    // Ensure the video plays and is loop/muted
+    video.muted = true;
+    video.play().catch((err) => {
+      console.log("Auto-play blocked or interrupted, attempting retry:", err);
+      const playVideo = () => {
+        video.play().catch(e => console.log(e));
+        window.removeEventListener("click", playVideo);
+      };
+      window.addEventListener("click", playVideo);
+    });
+
+    // Layout calculation function
+    const calculateLogoLayout = () => {
+      logoMask.setAttribute("d", LUMERLABS_PATH_DATA);
+      whiteLogo.setAttribute("d", LUMERLABS_PATH_DATA);
+
+      const logoDimensions = logoContainer.getBoundingClientRect();
+      const logoBoundingBox = logoMask.getBBox();
+
+      if (logoBoundingBox.width === 0 || logoBoundingBox.height === 0) return;
+
+      const horizontalScaleRatio = logoDimensions.width / logoBoundingBox.width;
+      const verticalScaleRatio = logoDimensions.height / logoBoundingBox.height;
+      const logoScaleFactor = Math.min(horizontalScaleRatio, verticalScaleRatio);
+
+      const logoHorizontalPosition =
+        logoDimensions.left +
+        (logoDimensions.width - logoBoundingBox.width * logoScaleFactor) / 2 -
+        logoBoundingBox.x * logoScaleFactor;
+
+      const logoVerticalPosition =
+        logoDimensions.top +
+        (logoDimensions.height - logoBoundingBox.height * logoScaleFactor) / 2 -
+        logoBoundingBox.y * logoScaleFactor;
+
+      const transformStr = `translate(${logoHorizontalPosition}, ${logoVerticalPosition}) scale(${logoScaleFactor})`;
+      
+      logoMask.setAttribute("transform", transformStr);
+      whiteLogo.setAttribute("transform", transformStr);
+    };
+
+    // Calculate layout initially
+    calculateLogoLayout();
+
+    // Responsive border radius
+    const getTargetBorderRadius = () => {
+      return window.innerWidth < 768 ? "24px" : "40px";
+    };
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "top top",
+        end: "+=1800", // Scroll length for the cinematic zoom and shrink sequence
+        scrub: 1,      // Smooth scrubbing linked to scroll speed
+        pin: true,     // Pin the hero section during the transition
+        anticipatePin: 1,
+        onUpdate: (self) => {
+          const scrollProgress = self.progress;
+          // Zoom transitions completes in 85% of total scroll distance
+          const normalizedProgress = Math.min(1, scrollProgress / 0.85);
+
+          // Exponential scale from 1 up to 950
+          const overlayScale = Math.pow(950, normalizedProgress);
+          gsap.set(svgOverlay, { scale: overlayScale });
+
+          // Fade out the solid white logo path
+          gsap.set(whiteLogo, { opacity: 1 - normalizedProgress });
+        }
+      },
+    });
+
+    // Shrink the video wrapper and round corners at the end of zoom sequence (0.85 to 1.0)
+    tl.to(videoWrapper, {
+      scale: 0.95,
+      borderRadius: getTargetBorderRadius(),
+      duration: 0.15,
+      ease: "power2.inOut",
+    }, 0.85)
+    // Fade in the tagline content
+    .to(content, {
+      opacity: 1,
+      y: 0,
+      duration: 0.15,
+      ease: "power2.out",
+    }, 0.85)
+    // Fade in global header navigation
+    .to("header", {
+      opacity: 1,
+      y: 0,
+      pointerEvents: "auto",
+      duration: 0.15,
+      ease: "power2.out",
+    }, 0.85);
+
+    // Recalculate ScrollTrigger and layout on window resize
+    const handleResize = () => {
+      calculateLogoLayout();
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (tl.scrollTrigger) tl.scrollTrigger.kill();
+      tl.kill();
+    };
   }, []);
 
   return (
-    <section 
-      id="home"
-      ref={containerRef} 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden section-stars-bg"
+    <div
+      ref={containerRef}
+      className="relative w-full h-screen overflow-hidden bg-black select-none"
+      id="hero"
     >
+      {/* Video card wrapper that shrinks and rounds */}
+      <div
+        ref={videoWrapperRef}
+        className="absolute inset-0 w-full h-full overflow-hidden origin-center bg-[#070708]"
+      >
+        <video
+          ref={videoRef}
+          src={videoSrc}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-      
-      {/* Subtle radial gradient overlay for depth */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.05)_0%,rgba(2,6,23,0)_70%)] pointer-events-none" />
+        {/* Ambient shadow gradient at the bottom of the video for typography visibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none z-20" />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
-        <p 
-          ref={subtitleRef}
-          className="text-[#6366f1] font-medium tracking-wide mb-6 text-sm sm:text-base md:text-lg"
+        {/* Overlay Content: Taglines and Scroll indicator. Visible after shrink. */}
+        <div
+          ref={contentRef}
+          className="absolute inset-x-0 bottom-12 px-8 md:px-16 flex flex-col md:flex-row md:justify-between md:items-end gap-6 opacity-0 translate-y-8 z-30 pointer-events-none"
         >
-          An AI-Powered Creative Studio
-        </p>
-        
-        <h1 
-          ref={titleRef}
-          className="text-white font-medium text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.1] tracking-tight"
-        >
-          Building the Future with<br/>
-          <span className="font-semibold">AI and Strategy</span>
-        </h1>
+          <div className="max-w-md">
+            <p className="text-[#8E8E93] text-xs uppercase tracking-widest font-semibold mb-2">
+              Lumer Labs
+            </p>
+            <h2 className="text-2xl md:text-3xl font-primary font-light text-[#F5F5F7] leading-tight tracking-tight">
+              Your Journey Beyond Ordinary Starts Here.
+            </h2>
+          </div>
+          
+          <div className="flex flex-col items-start md:items-end gap-2 text-xs text-[#8E8E93] tracking-wider uppercase font-semibold">
+            <span>Scroll to Enter</span>
+            <div className="w-6 h-10 border border-[#8E8E93]/30 rounded-full flex justify-center items-start p-1.5">
+              {/* Animated mouse wheel dot */}
+              <div className="w-1 h-2 bg-white rounded-full animate-bounce" />
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+
+      {/* SVG Mask Overlay */}
+      <div
+        ref={svgOverlayRef}
+        className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+        style={{ transformOrigin: "50% 50%" }}
+      >
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <mask id="logoRevealMask">
+              {/* Fill white to draw background rect everywhere */}
+              <rect width="100%" height="100%" fill="white" />
+              {/* Logo shape cuts a hole in the white mask */}
+              <path ref={logoMaskRef} fill="black" />
+            </mask>
+          </defs>
+          {/* Dark solid overlay everywhere EXCEPT the logo path */}
+          <rect width="100%" height="100%" fill="#111117" mask="url(#logoRevealMask)" />
+          {/* Solid white logo path rendered on top that fades out */}
+          <path ref={whiteLogoRef} fill="white" className="opacity-100" />
+        </svg>
+      </div>
+
+      {/* Anchor container for measuring dimensions */}
+      <div
+        ref={logoContainerRef}
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[380px] md:w-[480px] h-[150px] z-20 pointer-events-none opacity-0"
+      />
+    </div>
   );
 }

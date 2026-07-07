@@ -1,43 +1,40 @@
-# Astro Starter Kit: Minimal
+# LumerLabs™ — Creative Digital Agency
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Pioneering the intersection of artificial intelligence and strategic creativity to build the future of digital experiences.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🌟 Overview
 
-Inside of your Astro project, you'll see the following folders and files:
+**LumerLabs** is a premium, creative digital agency dedicated to helping businesses build powerful brands, modern high-performance websites, and meaningful digital experiences. 
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+By combining cutting-edge technology with cinematic storytelling and bespoke design systems, we build immersive web experiences that stand out, build long-term trust, and drive sustainable growth.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🛠️ Core Offerings & Services
 
-Any static assets, like images, can be placed in the `public/` directory.
+LumerLabs operates across seven main service sectors:
 
-## 🧞 Commands
+1. **Web Development**
+   * Engineered for performance, security, and scalability. We build custom corporate websites, customer portals, and e-commerce platforms using modern, SEO-optimized frameworks.
+2. **App Development**
+   * High-performance mobile applications that deliver smooth, native-like user experiences across iOS and Android devices, focusing on customer engagement and process streamlining.
+3. **Brand Identity Design**
+   * Creating complete visual systems—including logos, custom typography, color palettes, and comprehensive guidelines—to establish professional consistency across all brand touchpoints.
+4. **Graphic Designing**
+   * Bespoke marketing collateral, digital assets, and high-impact layouts that command attention and communicate your brand's unique message effectively.
+5. **Video & Media Production**
+   * Premium cinematic storytelling, from professional video shoots and editing to product photography, capturing and bringing your brand's vision to life.
+6. **SEO & Digital Growth**
+   * Data-backed search optimization strategies that boost online visibility, attract qualified traffic, and establish brand authority.
+7. **AI Business Automation**
+   * Designing smart integrations, automated workflows, and CRM connections to eliminate repetitive tasks and optimize operational efficiency.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🔒 License & Copyright
 
-## 👀 Want to learn more?
+All content, assets, designs, and source code are copy-protected under copyright laws.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© 2025 – 2026 LumerLabs™. All Rights Reserved.
