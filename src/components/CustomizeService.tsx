@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HoverRevealText } from "./HoverRevealText";
-import bannerBg from "../images/ChatGPT Image Jun 8, 2026, 08_40_04 AM.png";
+import bannerBg from "../images/contact-bg.png";
 
 gsap.registerPlugin(ScrollTrigger);
 

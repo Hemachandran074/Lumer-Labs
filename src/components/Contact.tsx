@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
-import bannerImg from "../images/ChatGPT Image Jun 8, 2026, 08_40_04 AM.png";
+import bannerImg from "../images/contact-bg.png";
 import { ContactSlide } from "./ContactSlide";
 import { HoverRevealText } from "./HoverRevealText";
 
