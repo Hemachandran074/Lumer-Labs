@@ -8,7 +8,7 @@ import { LUMERLABS_PATH_DATA } from "../../logoData";
 gsap.registerPlugin(ScrollTrigger);
 
 // Load the video directly from the Next.js static public path
-const videoSrc = "/149141-795734150_medium.mp4";
+const videoSrc = "/hero-vid.mp4";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -11,7 +11,7 @@ import { Preloader } from "@/components/Preloader";
 
 export const metadata: Metadata = {
   title: "Lumer Labs | AI, Web Development & Digital Solutions",
-  description: "We are Lumer Labs, a growth and creative agency pioneering the intersection of artificial intelligence and strategic creativity to build the future of digital experiences.",
+  description: "LumerLabs is an AI-powered digital agency specializing in custom software development, modern websites, UI/UX design, branding, automation, and scalable digital solutions for businesses",
 };
 
 export default function Home() {
