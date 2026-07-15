@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const videoSrc = "/WhatsApp Video 2026-06-16 at 1.18.41 PM.mp4";
+const videoSrc = "/background-vid.mp4";
 const logoSrc = "/lumer_labs_logo_svg.svg";
 
 export function Showcase() {
