@@ -31,6 +31,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lumer Labs | Growth and Creative Agency",
+    description:
+      "Lumer Labs is a growth and creative agency specializing in AI solutions, web development, custom software, mobile apps, automation, SaaS development, UI/UX design, branding, and digital marketing.",
+    images: ["https://www.lumerlabs.in/icon.svg"],
+  },
 };
 
 
