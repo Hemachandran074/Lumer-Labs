@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
+import OrganizationSchema from "./organization-schema";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,11 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark h-full antialiased">
-      <body className="min-h-full flex flex-col bg-black text-[#F5F5F7]">
-        {children}
-      <GoogleAnalytics gaId="G-LJ33N8PLG9" />
-      </body>
-    </html>
+      <html lang="en" className="dark h-full antialiased">
+        <head>
+          <OrganizationSchema />
+        </head>
+
+        <body className="min-h-full flex flex-col bg-black text-[#F5F5F7]">
+          {children}
+          <GoogleAnalytics gaId="G-LJ33N8PLG9" />
+        </body>
+      </html>
   );
 }
