@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
-import OrganizationSchema from "./organization-schema";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,16 +16,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-      <html lang="en" className="dark h-full antialiased">
-        <head>
-          <OrganizationSchema />
-        </head>
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Lumer Labs",
+    url: "https://www.lumerlabs.in",
+    logo: "https://www.lumerlabs.in/lumerlabs-png.png",
+    description:
+      "Lumer Labs is a growth and creative agency specializing in AI solutions, web development, branding, UI/UX, automation, SaaS development, and digital marketing.",
+  };
 
-        <body className="min-h-full flex flex-col bg-black text-[#F5F5F7]">
-          {children}
-          <GoogleAnalytics gaId="G-LJ33N8PLG9" />
-        </body>
-      </html>
+  return (
+    <html lang="en" className="dark h-full antialiased">
+      <body className="min-h-full flex flex-col bg-black text-[#F5F5F7]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+
+        {children}
+
+        <GoogleAnalytics gaId="G-LJ33N8PLG9" />
+      </body>
+    </html>
   );
 }
